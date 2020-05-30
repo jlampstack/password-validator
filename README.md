@@ -1,4 +1,2 @@
-# password-validator
-
-## View Project
+## Password Validator
 https://jlampstack.github.io/password-validator/
