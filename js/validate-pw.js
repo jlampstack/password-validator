@@ -124,7 +124,9 @@ function validatePassword( str ) {
    } 
    
    // Remove max if greater than max chars allowed
-   if( passwordLength > passwordLengthMax) {
+   if( passwordLengthIsGood ) {
+      charsmax.classList.add('pass-even');
+   } else {
       charsmax.classList.remove('pass-even');
    }
 
@@ -141,6 +143,8 @@ function validatePassword( str ) {
    } else if( passwordLengthIsLong ) {
       pwlength.style.color = 'var(--warning)';
       pwlength.innerHTML = `+${passwordLengthDiffLong}`;
+   } else {
+      pwlength.style.color = 'var(--primary)';
    }
 
 };
