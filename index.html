@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Validator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Password Validator &#10003;</h1>
+
+    <p>Validates each password checkpoint. For this exercise the input is set to text to visualize, but real sites should be set to password.</p>
+
+    <ol id="list">
+      <li id="digits-min">1 digit</li>
+      <li id="special-char-min">1 special character</li>
+      <li id="lowercase-min">1 lowercase letter</li>
+      <li id="uppercase-min">1 uppercase letter</li>
+      <li id="chars-min">8 characters min</li>
+      <li id="chars-max">32 characters max</li>
+    </ol>
+
+    
+    <form id="pw-validator">
+      <div class="wrapper">
+        <input class="password" type="text" onkeyup="validateInput(this.value)"
+               placeholder="Enter password" 
+               onclick="getfocus()"
+               onfocus="this.placeholder = ''" 
+               onblur="losefocus()" />
+               <!-- onblur="blur()this.placeholder = 'Enter password'" /> -->
+        <span class="pw-length"></span>
+      </div>
+      <input class="submit" type="submit" value="Validate Password" />
+    </form>
+
+  </div> <!-- container -->
+
+  <script src="./js/validate-pw.js"></script>
+
+</body>
+</html>

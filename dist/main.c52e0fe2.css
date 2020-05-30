@@ -1,0 +1,255 @@
+/* ---------------- Root ---------------- */
+
+:root {
+  --primary-lighter : #5dadb8;
+  --primary-light   : #429ba7;
+  --primary         : #089;
+  --primary-dark    : rgb(12, 132, 136);
+  --grey            : #ccc;
+  --warning         : #FB4D3D;
+  --pass            : #2e9dac;
+  --pass-even       : #089;
+  --transition      : background-color 0ms ease-in;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  font-size: 18px;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  line-height: 1.33;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  counter-reset: element;
+  padding: 0 12vw;
+  margin: 0;
+  background: var(--primary);
+}
+
+/* ---------------- Base ---------------- */
+
+/* Highlight Text */
+
+b {
+  border: 1px solid rgb(211, 190, 188);
+  padding: 4px 8px;
+  margin: 0 4px;
+  background: rgb(255, 255, 245);
+}
+
+/* Text */
+
+h1 {
+  font-size: 36px;
+  line-height: 1.15;
+  padding: 0px 24px;
+  margin: 21px 16px;
+  color: var(--primary-dark);
+  text-align: center;
+}
+
+h3 {
+  text-align: left;
+  padding-left: 40px;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1;
+  color: #2c2c2c;
+}
+
+
+
+p { 
+  font-size: 18px;
+  padding: 0px 24px 6px 24px;
+  margin: 0;
+  color: #777;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #08c;
+}
+
+a:hover {
+  color: #087;
+}
+
+/* Lists */
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol > li {
+  color: var(--primary);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 16px 20px;
+  font-weight: 400;
+  line-height: 2;
+}
+
+ol > li:nth-child(even) {
+  background: #e8e8e8;
+}
+
+
+ol > li::before {
+  counter-increment: element;
+  content: counter(element);
+  background: var(--primary);
+  font-weight: 700;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  padding: 18px;
+  margin-right: 16px;
+}
+
+.active {
+  background: orange;
+}
+
+
+/* ---------------- Layout ---------------- */
+
+.container {
+  max-width: 600px;
+  background: white;
+  padding: 48px;
+  margin: 32px;
+  box-shadow: 
+  4px 8px 8px 2px rgba(0, 0, 0, 0.2),
+  -4px 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.footer {
+  /* background: rgb(253, 245, 194); */
+  background: rgb(253, 250, 218);
+  padding: 32px 32px;
+  margin: 0 0 32px 0;
+}
+
+/* ----------- Form ----------- */
+
+#pw-validator {
+  min-height: 100px; 
+  background: #fff;
+  align-items: flex;
+  margin-top: 64px;
+}
+
+#pw-validator > .wrapper {
+  display: flex;
+  border: 1px solid var(--primary);
+}
+
+#pw-validator > .counter {
+  display: flex;
+  border: 1px solid var(--primary);
+}
+
+.pw-length {
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  align-items: center;
+  color: var(--grey);
+  padding: 0 24px 0 0;
+}
+
+.warning {
+  color: var(--warning);
+}
+
+.password {
+  height: 64px;
+  width: 100%;
+  font-size: 18px;
+  margin-left: 44px;
+  border: none;
+  color: var(--primary);
+  text-align: center;
+}
+
+.password::placeholder {
+  color: var(--primary-lighter);
+}
+
+.password:focus {
+  /* border: 2px solid var(--primary); */
+  outline: none;
+}
+
+/* States, pass or fail */
+.pass {
+  background: var(--pass) !important;
+  color: white;
+  transition: var(--transition);
+}
+
+.pass-even {
+  color: white;
+  background: var(--pass-even) !important;
+}
+
+.pass::before {
+  content: "\2713"; /* CSS code instead of unicode */
+  background: var(--pass-even);
+}
+
+.pass-even::before {
+  content: '\2713'; /* CSS code instead of unicode */
+  background: var(--pass);
+}
+
+
+.submit {
+  height: 64px;
+  font-size: 19px;
+  width: 100%;
+  /* max-width: 300px; */
+  cursor: pointer;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  margin-top: 16px;
+  color: #eee;
+}
+
+input
+
+/* ----------- Checkpoints ----------- */
+
+.checkpoints {
+  padding-right: 40px;
+}
+
+
+/* ----------- Print PDF Style ----------- */
+
+@media print {
+  .container {
+    box-shadow: none;
+  }
+  
+}
+
+
+/*# sourceMappingURL=/main.c52e0fe2.css.map */
